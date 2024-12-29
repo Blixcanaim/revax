@@ -1,0 +1,469 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto; /* Ensure scrolling is enabled */
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85vh; /* Reduced height to push products up */
+}
+
+.glow {
+    font-size: 8em; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    animation: bounce 3s infinite; /* Slow and smooth bounce */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+.glow span {
+    display: inline-block;
+}
+
+.outer-glow {
+    text-shadow: 0 0 4px var(--glow-color), 0 0 8px var(--glow-color), 0 0 12px var(--glow-color), 0 0 16px var(--glow-color); /* Slightly increased intensity outer glow */
+    color: var(--text-color); /* Different text color */
+}
+
+.slight-glow {
+    font-weight: 600; /* Slightly bold */
+    text-shadow: 0 0 2px var(--glow-color), 0 0 4px var(--glow-color), 0 0 6px var(--glow-color); /* Slight outer glow */
+    margin-top: -40px; /* Move text even closer */
+    color: var(--text-color); /* Different text color */
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Smooth and slower bounce */
+    }
+}
+
+.btn {
+    background-color: #00e5ff; /* Cyan color */
+    padding: 15px 30px; /* Adjust padding for a rectangular shape */
+    margin: 20px;
+    border: none;
+    border-radius: 25px; /* Rounded edges */
+    cursor: pointer;
+    font-size: 1.2em;
+    text-shadow: 0 0 4px #00e5ff, 0 0 8px #00e5ff, 0 0 12px #00e5ff; /* Glowing effect */
+    color: #000; /* Black text color */
+    font-weight: 600; /* Slightly bold text */
+}
+.nav, .brand {
+    font-weight: bold; /* Make text bold */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    color: var(--text-color, #fff); /* Customizable text color */
+    text-shadow: none; /* Remove glow effect */
+}
+
+.brand {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none; /* Remove underline */
+    color: var(--text-color); /* Different text color */
+    text-shadow: 0 0 4px var(--glow-color), 0 0 8px var(--glow-color), 0 0 12px var(--glow-color), 0 0 16px var(--glow-color); /* Slightly increased intensity outer glow */
+}
+
+.brand-revax, .brand-spoofer {
+    text-shadow: 0 0 4px var(--glow-color), 0 0 8px var(--glow-color), 0 0 12px var(--glow-color), 0 0 16px var(--glow-color); /* Slightly increased intensity outer glow */
+    color: var(--text-color); /* Different text color */
+    margin: 0 5px;
+    text-decoration: none; /* Remove underline */
+}
+.products-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Reduced margin top */
+}
+
+.products-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 10px;
+    width: 220px; /* Adjusted width to fit the image */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.product-info {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 0 0 10px 10px;
+}
+
+.product-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1em;
+    color: #00e5ff;
+    margin-bottom: 10px;
+}
+
+.product-button {
+    background-color: #00e5ff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover {
+    background-color: #00b8cc;
+}
+.virtualize-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #22222200;
+    border-radius: 10px;
+    color: #fff; /* Default text color */
+}
+
+.virtualize-heading {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.custom-color1 {
+    color: #ffffff; /* Custom hex color for "Virtualize" */
+}
+
+.custom-color2 {
+    color: #00e5ff; /* Custom hex color for "Your" */
+}
+
+.custom-color3 {
+    color: #ffffff; /* Custom hex color for "World" */
+}
+
+.virtualize-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.virtualize-item {
+    background: #1c1c1d2a; /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Glass effect: blur */
+    -webkit-backdrop-filter: blur(10px); /* Glass effect for Safari */
+    border: 1px solid #0000001a; /* Border to enhance glass look */
+    box-shadow: 0 4px 6px #0000001a; /* Subtle shadow for depth */
+    position: relative;
+    color: #fff; /* White text color */
+}
+
+.virtualize-item i {
+    font-size: 2em; /* Size of the icon */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #00e5ff; /* Custom color for the icon */
+}
+
+.virtualize-item-title {
+    font-size: 1.5em;
+    font-weight: bold; /* Bold text */
+    margin: 10px 0;
+    color: #fff; /* White text color */
+}
+
+.virtualize-item-description {
+    font-size: 1em;
+    color: #ddd; /* Light text color */
+    margin-top: 10px;
+}
+.virtualize-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #22222200;
+    border-radius: 10px;
+    color: #fff; /* Default text color */
+}
+
+.virtualize-heading, .video-heading {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00e5ff; /* Hex color for the new section */
+}
+
+.custom-color1 {
+    color: #ffffff; /* Custom hex color for "Virtualize" */
+}
+
+.custom-color2 {
+    color: #00e5ff; /* Custom hex color for "Your" */
+}
+
+.custom-color3 {
+    color: #ffffff; /* Custom hex color for "World" */
+}
+
+.virtualize-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.virtualize-item {
+    background: #1c1c1d2a; /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Glass effect: blur */
+    -webkit-backdrop-filter: blur(10px); /* Glass effect for Safari */
+    border: 1px solid #0000001a; /* Border to enhance glass look */
+    box-shadow: 0 4px 6px #0000001a; /* Subtle shadow for depth */
+    position: relative;
+    color: #fff; /* White text color */
+}
+
+.virtualize-item i {
+    font-size: 2em; /* Size of the icon */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #00e5ff; /* Custom color for the icon */
+}
+
+.virtualize-item-title {
+    font-size: 1.5em;
+    font-weight: bold; /* Bold text */
+    margin: 10px 0;
+    color: #fff; /* White text color */
+}
+
+.virtualize-item-description {
+    font-size: 1em;
+    color: #ddd; /* Light text color */
+    margin-top: 10px;
+}
+
+.video-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ff583300; /* Custom hex color for track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00e5ff; /* Custom hex color for thumb */
+    border-radius: 10px;
+    border: 3px solid #ff583300; /* Custom hex color for border to blend with track */
+}
+/* General Mobile Styles */
+@media (max-width: 767px) {
+    .content-wrapper, .products-section, .virtualize-section {
+        padding: 10px;
+    }
+    
+    .glow {
+        font-size: 5em; /* Smaller font size */
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons */
+        padding: 10px; /* Adjust padding */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .products-list {
+        flex-direction: column; /* Stack products vertically */
+        align-items: center;
+    }
+
+    .product {
+        width: 90%; /* Adjust product width */
+        margin-bottom: 20px; /* Add spacing between products */
+    }
+
+    .product-img, .video-container iframe {
+        width: 100%; /* Full width images and videos */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .product-info {
+        padding: 10px;
+    }
+
+    .product-title {
+        font-size: 1.2em; /* Adjust font size */
+    }
+
+    .product-price, .product-button {
+        position: static; /* Reset positioning */
+        margin-top: 10px; /* Add spacing */
+    }
+
+    .video-container {
+        width: 100%;
+        padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+        position: relative;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00e5ff; /* Thumb color */
+    border-radius: 10px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00b8cc; /* Thumb color on hover */
+}
+
+/* Mobile Scrollbar */
+@media (max-width: 767px) {
+    ::-webkit-scrollbar {
+        width: 8px; /* Narrower scrollbar for mobile */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #1a1a1a; /* Track color */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #00e5ff; /* Thumb color */
+        border-radius: 10px; /* Rounded edges */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #00b8cc; /* Thumb color on hover */
+    }
+}
+#splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.5s ease;
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.splash-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #00e5ff;
+}
+
+.music-container {
+    display: none; /* Ensure the music container is hidden */
+}
